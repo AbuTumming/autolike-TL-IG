@@ -1,15 +1,7 @@
 <?php
-/* 
- * CyberSec � 1437 Made This
- *
- * ./LaGondrong - TerbujurKaku
- *
- */
- */
 require 'Instagram.php';
-////////////
 if($_SERVER['REQUEST_METHOD']!=='GET') {
-	die('Fadhiil Rachman Ganteng');
+	die('oxgn');
 }
 $ig = new Instagram();
 $login=$ig->login();
@@ -17,18 +9,18 @@ if($login['status']=='fail') {
 	die($login['message']);
 }
 $userId=$ig->getUserId();
-$log=$LaGondrong['config'][5].$userId.'_likesTimeline.log';
+$log="log/".$oxgn['config'][5].$userId.'_likesTimeline.log';
 if(!file_exists( $log )) {
 	fopen($log,'a');
 }
-if($LaGondrong['config'][0]==true) {
+if($oxgn['config'][0]==true) {
 	$timelineFeed=$ig->timelineFeed();
 	if($timelineFeed['status']=='fail') {
 		if($timelineFeed['message']=='login_required') {
 			$fileArray = array(
-				"cache/".$LaGondrong['ig'][0]."-cookies.log",
-				"cache/".$LaGondrong['ig'][0]."-token.log",
-				"cache/".$LaGondrong['ig'][0]."-userId.log"
+				"cache/".$oxgn['ig'][0]."-cookies.log",
+				"cache/".$oxgn['ig'][0]."-token.log",
+				"cache/".$oxgn['ig'][0]."-userId.log"
 			);
 			foreach ($fileArray as $value) {
 				if (file_exists($value)) {
@@ -47,11 +39,11 @@ if($LaGondrong['config'][0]==true) {
 				// like to media_id
 				$do_like=$ig->like($media_id);
 				if($do_like==false) {
-					file_put_contents($LaGondrong['config'][6], "(".date('Y/m/d H:i:s').") [LIKE_MEDIA] => ".$media_id." (NOT_FOUND)\n", FILE_APPEND);
+					file_put_contents($oxgn['config'][6], "(".date('Y/m/d H:i:s').") [LIKE_MEDIA] => ".$media_id." (NOT_FOUND)\n", FILE_APPEND);
 					echo "[NOT_FOUND] [LIKE_MEDIA] => " . $media_id . "\n";
 				}
 				if($do_like['status']=='fail') {
-					file_put_contents($LaGondrong['config'][6], "(".date('Y/m/d H:i:s').") [LIKE_MEDIA] => ".$media_id." (ERROR)\n", FILE_APPEND);
+					file_put_contents($oxgn['config'][6], "(".date('Y/m/d H:i:s').") [LIKE_MEDIA] => ".$media_id." (ERROR)\n", FILE_APPEND);
 					echo "[ERROR] [LIKE_MEDIA] => " . $media_id . "\n";
 				}
 				if($do_like['status']=='ok') {
