@@ -1,9 +1,10 @@
 <?php
 /* 
- * MUHAMMAD FADHIIL RACHMAN © 2016 Made This
+ * CyberSec � 1437 Made This
  *
- * fadhiilrachman@gmail.com - fadilus.com
+ * ./LaGondrong - TerbujurKaku
  *
+ */
  */
 require 'Instagram.php';
 ////////////
