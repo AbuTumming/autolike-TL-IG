@@ -8,7 +8,7 @@
 # Untuk CronJob bisa cron-job.org
 * Cron Job 15 menit atau 30 menit biar aman.
 * Jika kebanned bukan tanggung jawab saya.
-* Follow https://www.instagram.com/ysh_putra
+* Follow https://www.instagram.com/insanterasing
 
 # Author
-Made With Love By MUHAMMAD FADHIIL RACHMAN 2016
+Made CyberSec 1437 H
