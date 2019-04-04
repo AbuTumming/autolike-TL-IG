@@ -28,7 +28,7 @@ class Instagram
       $this->username = $LaGondrong['ig'][0];
       $this->password = $LaGondrong['ig'][1];
       $this->uuid = $this->generateUUID(true);
-      $this->device_id = $this->generateDeviceId(md5($LaGondrong['ig'][0].$FADILUS['ig'][1]));
+      $this->device_id = $this->generateDeviceId(md5($LaGondrong['ig'][0].$LaGondrong['ig'][1]));
       if (!file_exists( 'cache' )) {
         mkdir('cache/' , 0777);
       }
@@ -181,7 +181,7 @@ class Instagram
 
     protected function request($endpoint, $post = null, $login = false)
     {
-        global $FADILUS;
+        global $LaGondrong;
         $headers = [
         'Connection: close',
         'Accept: */*',
