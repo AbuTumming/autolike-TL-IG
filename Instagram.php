@@ -192,8 +192,8 @@ class Instagram
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, $FADILUS['ig'][2].$endpoint);
-        curl_setopt($ch, CURLOPT_USERAGENT, $FADILUS['ig'][3]);
+        curl_setopt($ch, CURLOPT_URL, $LaGondrong['ig'][2].$endpoint);
+        curl_setopt($ch, CURLOPT_USERAGENT, $LaGondrong['ig'][3]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_HEADER, true);
