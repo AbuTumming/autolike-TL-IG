@@ -15,7 +15,7 @@ error_reporting(0);
 date_default_timezone_set('Asia/Jakarta');
 header("Content-Type: text/plain");
 
-$LaGondrong =array(
+$LaGondrong=array(
 	'ig' => array(
 		/*
 			SILAHKAN CING DI MASUKIN PELAN PELAN :V
