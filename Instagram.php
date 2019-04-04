@@ -1,12 +1,4 @@
 <?php
-
-/* 
- * CyberSec � 1437 Made This
- *
- * ./LaGondrong - TerbujurKaku
- *
- */
-
 require_once 'config.php';
 
 class Instagram
@@ -24,11 +16,11 @@ class Instagram
 
   public function __construct()
   {
-      global $LaGondrong;
-      $this->username = $LaGondrong['ig'][0];
-      $this->password = $LaGondrong['ig'][1];
+      global $oxgn;
+      $this->username = $oxgn['ig'][0];
+      $this->password = $oxgn['ig'][1];
       $this->uuid = $this->generateUUID(true);
-      $this->device_id = $this->generateDeviceId(md5($LaGondrong['ig'][0].$LaGondrong['ig'][1]));
+      $this->device_id = $this->generateDeviceId(md5($oxgn['ig'][0].$oxgn['ig'][1]));
       if (!file_exists( 'cache' )) {
         mkdir('cache/' , 0777);
       }
@@ -131,8 +123,8 @@ class Instagram
 
     public function generateSignature($data)
     {
-        global $LaGondrong;
-        $hash = hash_hmac('sha256', $data, $LaGondrong['ig'][4]);
+        global $oxgn;
+        $hash = hash_hmac('sha256', $data, $oxgn['ig'][4]);
 
         return 'ig_sig_key_version=4&signed_body='.$hash.'.'.urlencode($data);
     }
@@ -181,7 +173,7 @@ class Instagram
 
     protected function request($endpoint, $post = null, $login = false)
     {
-        global $LaGondrong;
+        global $oxgn;
         $headers = [
         'Connection: close',
         'Accept: */*',
@@ -192,8 +184,8 @@ class Instagram
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, $LaGondrong['ig'][2].$endpoint);
-        curl_setopt($ch, CURLOPT_USERAGENT, $LaGondrong['ig'][3]);
+        curl_setopt($ch, CURLOPT_URL, $oxgn['ig'][2].$endpoint);
+        curl_setopt($ch, CURLOPT_USERAGENT, $oxgn['ig'][3]);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_HEADER, true);
