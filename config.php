@@ -1,10 +1,4 @@
 <?php
-/* 
- * CyberSec � 1437 Made This
- *
- * ./LaGondrong - TerbujurKaku
- *
- */
 @ini_set('memory_limit', '-1');
 @ini_set('output_buffering',0);
 @ini_set('display_errors', 0);
@@ -15,10 +9,10 @@ error_reporting(0);
 date_default_timezone_set('Asia/Jakarta');
 header("Content-Type: text/plain");
 
-$LaGondrong=array(
+$oxgn=array(
 	'ig' => array(
 		/*
-			SILAHKAN CING DI MASUKIN PELAN PELAN :V
+			EDIT BAGIAN DIBAWAH INI USERNAME DAN PASSWORD
 		*/
 		'anaklorongmks', // USERNAME instagram lu
 		'al123mks@', // PASSWORD instagram lu
@@ -33,6 +27,6 @@ $LaGondrong=array(
 	)
 );
 
-if(!file_exists( $LaGondrong ['config'][5] )) {
-	mkdir($LaGondrong ['config'][5].'/' , 0777);
+if(!file_exists( $oxgn['config'][5] )) {
+	mkdir($oxgn['config'][5].'/' , 0777);
 }
